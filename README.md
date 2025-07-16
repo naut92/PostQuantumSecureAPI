@@ -35,24 +35,29 @@ Includes unit and integration tests for:
 ## 📂 Endpoints
 
 ### POST `/encrypt`
+**Request:**
+
 ```json
-Request:
 {
   "data": "Hello, PQ world!"
 }
+```
 
-Response:
+**Response:**
+```json
 {
   "encrypted": "ENC[Base64-string]"
 }
+```
 
 ### POST `/decrypt`
 
-Response:
+**Response:**
+```json
 {
   "decrypted": "Hello, PQ world!"
 }
-
+```
 
 curl -X POST http://localhost:8081/api/messages/encrypt -H "Content-Type: text/plain" -d "hello world"
 
@@ -61,14 +66,7 @@ curl -X POST http://localhost:8081/api/messages/encrypt -H "Content-Type: text/p
 ```bash
 # Start database
 docker-compose up -d
+```
 
 # Run tests
 ./gradlew test
-
-🧠 Vision
-
-This project is a prototype for secure communication in a post-quantum world. It could evolve into:
-	•	a secure messaging backend
-	•	encrypted data vaults for fintech/telecom
-	•	research POCs for migration planning
-
